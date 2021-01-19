@@ -4,4 +4,10 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\OpenMetaverse.StructuredData\OpenMetaverse.StructuredData.csproj" />
+      <ProjectReference Include="..\OpenMetaverseTypes\OpenMetaverseTypes.csproj" />
+      <ProjectReference Include="..\OpenMetaverse\OpenMetaverse.csproj" />
+    </ItemGroup>
+
 </Project>
