@@ -10,4 +10,10 @@
       <ProjectReference Include="..\OpenMetaverse\OpenMetaverse.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="XMLRPC, Version=1.10.0.1, Culture=neutral, PublicKeyToken=null">
+        <HintPath>..\OpenMetaverse\XMLRPC.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
