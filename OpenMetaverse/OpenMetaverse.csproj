@@ -14,4 +14,16 @@
       <ProjectReference Include="..\OpenMetaverseTypes\OpenMetaverseTypes.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="XMLRPC, Version=1.10.0.1, Culture=neutral, PublicKeyToken=null">
+        <HintPath>XMLRPC.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="XMLRPC.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
