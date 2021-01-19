@@ -30,12 +30,15 @@ using System.Collections.Generic;
 using System.Threading;
 using System.IO;
 using System.Net;
+using System.Net.Security;
 using System.Xml;
 using System.Security.Cryptography.X509Certificates;
 using Nwc.XmlRpc;
 using OpenMetaverse.StructuredData;
 using OpenMetaverse.Http;
 using OpenMetaverse.Packets;
+
+
 
 namespace OpenMetaverse
 {
@@ -1113,7 +1116,7 @@ namespace OpenMetaverse
             #endregion
 
             // TODO: Allow a user callback to be defined for handling the cert
-            ServicePointManager.CertificatePolicy = new TrustAllCertificatePolicy();
+            ServicePointManager.ServerCertificateValidationCallback += new RemoteCertificateValidationCallback((sender, certificate, chain, policyErrors) => { return true; });
             // Even though this will compile on Mono 2.4, it throws a runtime exception
             //ServicePointManager.ServerCertificateValidationCallback = TrustAllCertificatePolicy.TrustAllCertificateHandler;
 
