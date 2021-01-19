@@ -35,6 +35,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
+using System.Net.Security;
 using System.Xml;
 using System.Text;
 using System.Threading;
@@ -205,7 +206,7 @@ namespace GridProxy
         {
             this.proxyConfig = proxyConfig;
 
-            ServicePointManager.CertificatePolicy = new TrustAllCertificatePolicy();
+            ServicePointManager.ServerCertificateValidationCallback += new RemoteCertificateValidationCallback((sender, certificate, chain, policyErrors) => { return true; });;
             ServicePointManager.Expect100Continue = false;
             ServicePointManager.DefaultConnectionLimit = 128;
             // Even though this will compile on Mono 2.4, it throws a runtime exception
